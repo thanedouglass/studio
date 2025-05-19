@@ -14,7 +14,6 @@ This project is an extension of the **Double & Giveback Inc.** mission to shift 
 ## 🌐 Core Features
 
 - 🫱🏾‍🫲🏽 **Pledge Feed** — See who’s committing to ethical, equitable science in real time  
-- 🌀 **Floating Particle Background** — Interactive aesthetic representing scientific frequencies and energetic flow  
 - 🔐 **Firebase Firestore** — Realtime backend for pledge data and researcher profiles  
 - 🧬 **Researcher Match Engine** — (In development) Smart directory for lab openings and personalized opportunities
 
