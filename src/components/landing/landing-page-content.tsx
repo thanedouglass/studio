@@ -14,7 +14,7 @@ const sectionVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.2, // Stagger delay for each section
+      delay: i * 0.15, // Adjusted stagger delay
       duration: 0.7,
       ease: "easeOut",
     },
@@ -23,33 +23,35 @@ const sectionVariants = {
 
 export default function LandingPageContent() {
   const sections = [
-    <HeroSection key="hero" />,
-    <div key="sep1" className="container mx-auto max-w-4xl my-8 md:my-12">
-      <Separator className="bg-border/30" />
-    </div>,
-    <SloganSection key="slogan" />,
-    <div key="sep2" className="container mx-auto max-w-4xl my-8 md:my-12">
-      <Separator className="bg-border/30" />
-    </div>,
-    <PledgeStatement key="pledge" />,
-    <div key="sep3" className="container mx-auto max-w-4xl my-8 md:my-12">
-      <Separator className="bg-border/30" />
-    </div>,
-    <DGBMissionIntegration key="dgb" />,
+    { component: <HeroSection key="hero" />, showSeparator: true },
+    { component: <SloganSection key="slogan" />, showSeparator: true },
+    { component: <PledgeStatement key="pledge" />, showSeparator: true },
+    { component: <DGBMissionIntegration key="dgb" />, showSeparator: false }, // No separator after the last main landing section
   ];
 
   return (
-    <div className="space-y-0 mb-16 md:mb-24"> {/* Removed space-y from here, handled by motion.div or margins */}
-      {sections.map((SectionComponent, index) => (
+    <div className="space-y-0 mb-12 md:mb-16">
+      {sections.map((sectionInfo, index) => (
         <motion.div
-          key={index}
+          key={`section-wrapper-${index}`}
           custom={index}
           initial="hidden"
-          animate="visible"
+          whileInView="visible" // Changed from animate to whileInView for better scroll-based animation
           variants={sectionVariants}
-          viewport={{ once: true, amount: 0.1 }} // Trigger when 10% of section is visible
+          viewport={{ once: true, amount: 0.1 }} 
         >
-          {SectionComponent}
+          {sectionInfo.component}
+          {sectionInfo.showSeparator && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true, amount: 0.5 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="container mx-auto max-w-4xl my-8 md:my-16" // Increased margin for separators
+            >
+              <Separator className="bg-border/30" />
+            </motion.div>
+          )}
         </motion.div>
       ))}
     </div>
