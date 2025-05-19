@@ -44,13 +44,19 @@ export default function DGBMissionIntegration() {
           viewport={{ once: true }}
           whileHover={{ y: -5, boxShadow: "0 8px 25px -3px hsl(var(--secondary) / 0.5)" }}
         >
+          {/* 
+            TODO: User should place their image 'dgb-slogan-text.png' (the one provided in the prompt)
+            in the 'public/images/' directory.
+            The image provided is 856x214 pixels, which has a 4:1 aspect ratio.
+            The width={380} and height={95} props maintain this aspect ratio.
+          */}
           <Image
-            src="https://placehold.co/480x120.png" // Placeholder for /assets/dgb-slogan.png
+            src="/images/dgb-slogan-text.png" 
             alt="Powered by DGB Slogan: Shifting Limiting Realities Through Creative Mediums"
-            width={380} // Adjusted for typical slogan image aspect ratio
+            width={380} 
             height={95}
             className="rounded-lg opacity-80 group-hover:opacity-100 transition-opacity duration-300 border-2 border-secondary/40 group-hover:border-secondary shadow-md group-hover:shadow-glow-secondary"
-            data-ai-hint="dgb slogan text creative mediums"
+            data-ai-hint="pink gold slogan text"
           />
            <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
             Powered by DGB
