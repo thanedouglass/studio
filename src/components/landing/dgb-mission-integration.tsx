@@ -1,34 +1,62 @@
+// src/components/landing/dgb-mission-integration.tsx
+"use client";
+
 import Image from 'next/image';
-import { ShieldCheck } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { ShieldCheck, Zap } from 'lucide-react'; // Zap for "powered by" ethos
 
 export default function DGBMissionIntegration() {
   return (
-    <section className="py-16 md:py-24">
+    <motion.section 
+      className="py-16 md:py-24 bg-background"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <div className="container mx-auto px-4 text-center max-w-3xl">
-        <h2 className="font-sans text-3xl md:text-4xl font-semibold text-accent mb-8 flex items-center justify-center">
-          <ShieldCheck className="w-10 h-10 mr-3 text-accent" />
+        <motion.h2 
+          className="font-serif text-3xl md:text-4xl font-semibold text-accent mb-8 flex items-center justify-center text-glow"
+          initial={{ opacity:0, y:20 }}
+          whileInView={{ opacity:1, y:0 }}
+          transition={{ duration:0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+        >
+          <Zap className="w-10 h-10 mr-3 text-accent" />
           Why We Exist
-        </h2>
-        <p className="font-sans text-md md:text-lg leading-relaxed text-warm-off-white/80 mb-12">
-          The Nexus is powered by the ethos of Double & Giveback Inc.—an organization devoted to shifting limiting realities through creative mediums, systems, and open-source infrastructure. We envision a world where researchers and innovators don’t just contribute to knowledge, but reshape how knowledge is accessed, funded, and redistributed.
-        </p>
-        <div 
+        </motion.h2>
+        <motion.p 
+          className="font-sans text-md md:text-lg leading-relaxed text-foreground/80 mb-12"
+          initial={{ opacity:0, y:20 }}
+          whileInView={{ opacity:1, y:0 }}
+          transition={{ duration:0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          The Nexus is powered by the philosophy of Double & Giveback Inc.—committed to shifting limiting realities through sacred systems, open tooling, and communal knowledge. Our movement blends technical precision with collective healing through decentralization.
+        </motion.p>
+        
+        <motion.div
           className="group relative inline-block"
-          title="Powered by DGB – We Double What You Are, We Giveback What You Know."
+          title="Powered by DGB – Shifting Limiting Realities Through Creative Mediums"
+          initial={{ opacity:0, scale:0.8 }}
+          whileInView={{ opacity:1, scale:1 }}
+          transition={{ duration:0.7, delay: 0.5, type: "spring", stiffness:150 }}
+          viewport={{ once: true }}
+          whileHover={{ y: -5, boxShadow: "0 8px 25px -3px hsl(var(--secondary) / 0.5)" }}
         >
           <Image
-            src="https://placehold.co/150x150.png"
-            alt="DGB Slogan Seal"
-            width={120}
-            height={120}
-            className="rounded-full opacity-70 group-hover:opacity-100 transition-opacity duration-300 border-2 border-brushed-gold/50 group-hover:border-brushed-gold"
-            data-ai-hint="DGB logo seal abstract"
+            src="https://placehold.co/480x120.png" // Placeholder for /assets/dgb-slogan.png
+            alt="Powered by DGB Slogan: Shifting Limiting Realities Through Creative Mediums"
+            width={380} // Adjusted for typical slogan image aspect ratio
+            height={95}
+            className="rounded-lg opacity-80 group-hover:opacity-100 transition-opacity duration-300 border-2 border-secondary/40 group-hover:border-secondary shadow-md group-hover:shadow-glow-secondary"
+            data-ai-hint="dgb slogan text creative mediums"
           />
-           <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+           <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 text-xs text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-sans">
             Powered by DGB
           </span>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

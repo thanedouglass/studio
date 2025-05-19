@@ -60,15 +60,14 @@ export default {
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
   			},
-        // New landing page colors
-        'cherry-blossom-pink': 'hsl(var(--cherry-blossom-pink-hsl))',
-        'brushed-gold': 'hsl(var(--brushed-gold-hsl))',
-        'warm-off-white': 'hsl(var(--warm-off-white-hsl))',
+        // Removed old DGB landing page specific colors as they are now part of the main theme
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
-  			sm: 'calc(var(--radius) - 4px)'
+  			sm: 'calc(var(--radius) - 4px)',
+        xl: 'calc(var(--radius) + 4px)', // Added for pledge_cta
+        '2xl': 'calc(var(--radius) + 8px)',
   		},
   		keyframes: {
   			'accordion-down': {
@@ -87,25 +86,30 @@ export default {
   					height: '0'
   				}
   			},
-        'pulse-gold': {
-          '0%, 100%': { boxShadow: '0 0 10px 2px hsl(var(--brushed-gold-hsl))', opacity: '1' },
-          '50%': { boxShadow: '0 0 20px 7px hsl(var(--brushed-gold-hsl))', opacity: '0.7' },
+        'pulse-glow': { // For CTA button pulse
+          '0%, 100%': { boxShadow: '0 0 12px hsl(var(--primary) / 0.4)', opacity: '1' },
+          '50%': { boxShadow: '0 0 24px hsl(var(--primary) / 0.6)', opacity: '0.8' },
         },
-        'pulse-pink': {
-          '0%, 100%': { opacity: '1' },
-          '50%': { opacity: '0.7' },
+        'float': {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' },
         }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-        'pulse-gold': 'pulse-gold 2s infinite ease-in-out',
-        'pulse-pink-hover': 'pulse-pink 1.5s infinite ease-in-out'
+        'pulse-glow': 'pulse-glow 2.5s infinite ease-in-out',
+        'float': 'float 6s infinite ease-in-out',
   		},
       fontFamily: {
-        sans: ['var(--font-geist-sans)'],
-        serif: ['serif'], // Generic serif stack
+        sans: ['Satoshi', 'var(--font-geist-sans)', 'sans-serif'], // Prioritize Satoshi
+        serif: ['Playfair Display', 'serif'], // Prioritize Playfair Display
         mono: ['var(--font-geist-mono)'],
+      },
+      boxShadow: {
+        'glow-primary': '0 0 24px 0px hsl(var(--primary) / 0.5)',
+        'glow-secondary': '0 0 24px 0px hsl(var(--secondary) / 0.5)',
+        'glow-accent': '0 0 18px 0px hsl(var(--accent) / 0.4)',
       }
   	}
   },

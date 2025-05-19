@@ -4,35 +4,36 @@
 
 @layer base {
   :root {
-    --background: 222.2 84% 4.9%; /* Default to dark background for .dark class */
-    --foreground: 210 40% 98%;
+    /* New Theme Colors based on "The Nexus Research Collective" */
+    --background: 34 100% 98.2%; /* #fffaf6 */
+    --foreground: 21 48% 26%; /* #744f32 (DGB Accent as foreground) */
 
-    --card: 222.2 84% 6.9%; /* Slightly lighter than background for cards */
-    --card-foreground: 210 40% 98%;
+    --card: 338 82% 96.7%; /* Lighter version of primary for card bg #fbeaf2 */
+    --card-foreground: 21 48% 26%; /* #744f32 */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 34 100% 99%; /* Slightly off-white from background #fffdfa */
+    --popover-foreground: 21 48% 26%; /* #744f32 */
 
-    --primary: 252 92% 85%; /* #A78BFA */
-    --primary-foreground: 252 92% 15%; /* Darker purple for text on primary */
+    --primary: 338 82% 94.7%; /* #f9e5ee (DGB Primary Pinkish) */
+    --primary-foreground: 21 48% 20%; /* Darker brown for text on primary #5b3f28 */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 40 88% 72.4%; /* #f5c06b (DGB Secondary Gold/Yellow) */
+    --secondary-foreground: 21 48% 20%; /* Darker brown for text on secondary #5b3f28 */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --muted: 34 100% 97%; /* Very light off-white, close to bg but distinct #fff8f0 */
+    --muted-foreground: 21 30% 50%; /* Muted brown #a18879 */
 
-    --accent: 200 95% 74%; /* #7DD3FC */
-    --accent-foreground: 200 95% 10%; /* Darker blue for text on accent */
-
-    --destructive: 0 62.8% 30.6%;
+    --accent: 21 48% 32.9%; /* #744f32 (DGB Accent Brown) */
+    --accent-foreground: 34 100% 98.2%; /* #fffaf6 (Background color for text on accent) */
+    
+    --destructive: 0 72% 51%; /* Default destructive */
     --destructive-foreground: 0 0% 98%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 252 92% 85%; /* Primary color for focus rings */
+    --border: 338 60% 88%; /* #f7ddea - Softer Pinkish border */
+    --input: 338 70% 92%; /* #f9e0ec - Light Pinkish input background */
+    --ring: 40 88% 65%; /* #f4b954 - Slightly darker gold for focus rings */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem; /* Slightly more rounded, as per "rounded-xl" in spec */
 
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -41,45 +42,23 @@
     --chart-5: 27 87% 67%;
 
     /* Sidebar specific vars - can keep defaults or adjust if sidebar is used extensively */
-    --sidebar-background: 222.2 84% 4.9%;
-    --sidebar-foreground: 210 40% 98%;
-    --sidebar-primary: 252 92% 85%;
-    --sidebar-primary-foreground: 252 92% 15%;
-    --sidebar-accent: 200 95% 74%;
-    --sidebar-accent-foreground: 200 95% 10%;
-    --sidebar-border: 217.2 32.6% 17.5%;
-    --sidebar-ring: 252 92% 85%;
+    --sidebar-background: 34 100% 98.2%;
+    --sidebar-foreground: 21 48% 26%;
+    --sidebar-primary: 338 82% 94.7%;
+    --sidebar-primary-foreground: 21 48% 20%;
+    --sidebar-accent: 40 88% 72.4%;
+    --sidebar-accent-foreground: 21 48% 20%;
+    --sidebar-border: 338 60% 88%;
+    --sidebar-ring: 40 88% 65%;
 
-    /* New colors for landing page */
-    --cherry-blossom-pink-hsl: 345 100% 88%;
-    --brushed-gold-hsl: 40 90% 65%;
-    --warm-off-white-hsl: 30 30% 95%; /* Similar to foreground but can be used specifically */
+    /* Specific DGB theme colors for use in Tailwind config if needed directly */
+    /* These are now represented in the main theme above */
+    /* --dgb-primary-hex: #f9e5ee; */
+    /* --dgb-secondary-hex: #f5c06b; */
+    /* --dgb-accent-hex: #744f32; */
+    /* --dgb-background-hex: #fffaf6; */
+    /* --dgb-glow-rgba: rgba(255, 204, 229, 0.6); */
   }
-
-  /* Light theme - if ever needed, can be defined here or removed if app is dark-only */
-  /*
-  .light {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 252 92% 60%; 
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 200 95% 50%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-  }
-  */
 }
 
 @layer base {
@@ -91,9 +70,17 @@
     /* font-family is set by Next/Font in layout.tsx */
   }
   .font-serif {
-    font-family: serif; /* Basic serif fallback */
+     font-family: 'Playfair Display', serif; /* As requested, ensure this font is loaded in layout.tsx */
   }
   .font-sans {
-     /* This will inherit from body, which uses Geist via layout.tsx */
+     /* This will inherit from body (Geist), or 'Satoshi' if configured in layout.tsx */
+     font-family: 'Satoshi', var(--font-geist-sans), sans-serif; /* As requested, ensure this font is loaded in layout.tsx */
+  }
+  /* Add a utility for the glow color if needed, or apply directly */
+  .shadow-glow {
+    box-shadow: 0 0 24px 0px hsl(var(--primary) / 0.5); /* Using primary for glow, adjust as needed */
+  }
+   .text-glow {
+    text-shadow: 0 0 8px hsl(var(--primary) / 0.7);
   }
 }
