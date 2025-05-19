@@ -59,7 +59,11 @@ export default {
   				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
   				border: 'hsl(var(--sidebar-border))',
   				ring: 'hsl(var(--sidebar-ring))'
-  			}
+  			},
+        // New landing page colors
+        'cherry-blossom-pink': 'hsl(var(--cherry-blossom-pink-hsl))',
+        'brushed-gold': 'hsl(var(--brushed-gold-hsl))',
+        'warm-off-white': 'hsl(var(--warm-off-white-hsl))',
   		},
   		borderRadius: {
   			lg: 'var(--radius)',
@@ -82,12 +86,27 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+        'pulse-gold': {
+          '0%, 100%': { boxShadow: '0 0 10px 2px hsl(var(--brushed-gold-hsl))', opacity: '1' },
+          '50%': { boxShadow: '0 0 20px 7px hsl(var(--brushed-gold-hsl))', opacity: '0.7' },
+        },
+        'pulse-pink': {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.7' },
+        }
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
-  		}
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-gold': 'pulse-gold 2s infinite ease-in-out',
+        'pulse-pink-hover': 'pulse-pink 1.5s infinite ease-in-out'
+  		},
+      fontFamily: {
+        sans: ['var(--font-geist-sans)'],
+        serif: ['serif'], // Generic serif stack
+        mono: ['var(--font-geist-mono)'],
+      }
   	}
   },
   plugins: [require("tailwindcss-animate")],

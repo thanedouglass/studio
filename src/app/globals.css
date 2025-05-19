@@ -49,6 +49,11 @@
     --sidebar-accent-foreground: 200 95% 10%;
     --sidebar-border: 217.2 32.6% 17.5%;
     --sidebar-ring: 252 92% 85%;
+
+    /* New colors for landing page */
+    --cherry-blossom-pink-hsl: 345 100% 88%;
+    --brushed-gold-hsl: 40 90% 65%;
+    --warm-off-white-hsl: 30 30% 95%; /* Similar to foreground but can be used specifically */
   }
 
   /* Light theme - if ever needed, can be defined here or removed if app is dark-only */
@@ -84,5 +89,11 @@
   body {
     @apply bg-background text-foreground;
     /* font-family is set by Next/Font in layout.tsx */
+  }
+  .font-serif {
+    font-family: serif; /* Basic serif fallback */
+  }
+  .font-sans {
+     /* This will inherit from body, which uses Geist via layout.tsx */
   }
 }
