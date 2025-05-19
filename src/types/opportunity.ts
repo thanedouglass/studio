@@ -14,6 +14,7 @@ export interface Opportunity {
   keywords?: string[];
   imageUrl: string;
   imageHint?: string;
+  positionType: string[]; // New field
 
   // AI Categorized fields
   academicYear: string; // e.g., "Freshman", "Sophomore", "Junior", "Senior", "Graduate"
@@ -24,5 +25,6 @@ export interface Opportunity {
 
 export const ACADEMIC_YEARS = ["All", "Freshman", "Sophomore", "Junior", "Senior", "Graduate"];
 export const RESEARCH_TYPES = ["All", "Wet Lab", "Dry Lab", "Clinical", "Field Research", "Computational", "Theoretical"];
-export const DISCIPLINES = ["All", "Biology", "Chemistry", "Computer Science", "Engineering", "Physics", "Mathematics", "Humanities", "Social Sciences", "Arts", "Medicine"];
+export const DISCIPLINES = ["All", "Biology", "Chemistry", "Computer Science", "Engineering", "Physics", "Mathematics", "Humanities", "Social Sciences", "Arts", "Medicine", "Urban Studies"];
 export const EXPERIENCE_LEVELS = ["All", "Beginner", "Intermediate", "Advanced"];
+export const POSITION_TYPES = ["All", "Paid", "Unpaid", "Volunteer", "Research Assistant", "Fellowship", "Internship", "Shadowing"];

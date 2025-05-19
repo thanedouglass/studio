@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { MapPin, CalendarDays, User, Award, Briefcase, BookOpen, ClockIcon } from 'lucide-react';
+import { MapPin, CalendarDays, User, Briefcase, ClockIcon } from 'lucide-react'; // Removed Award, BookOpen
 
 interface OpportunityCardProps {
   opportunity: Opportunity;
@@ -51,6 +51,16 @@ export default function OpportunityCard({ opportunity }: OpportunityCardProps) {
           <Badge variant="outline" className="border-accent text-accent">{opportunity.discipline}</Badge>
           <Badge variant="outline" className="border-accent text-accent">{opportunity.experienceLevel}</Badge>
         </div>
+        
+        {opportunity.positionType && opportunity.positionType.length > 0 && (
+          <div className="flex flex-wrap gap-1 pt-1 items-center">
+            <Briefcase className={`w-4 h-4 mr-1 ${iconColor}`} />
+            {opportunity.positionType.map(pt => (
+              <Badge key={pt} variant="secondary" className="capitalize">{pt}</Badge>
+            ))}
+          </div>
+        )}
+
         {opportunity.keywords && opportunity.keywords.length > 0 && (
           <div className="flex flex-wrap gap-1 pt-1">
             {opportunity.keywords.slice(0,3).map(keyword => (

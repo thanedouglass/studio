@@ -3,13 +3,14 @@
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 import { Filter } from "lucide-react";
-import { ACADEMIC_YEARS, RESEARCH_TYPES, DISCIPLINES, EXPERIENCE_LEVELS } from "@/types/opportunity";
+import { ACADEMIC_YEARS, RESEARCH_TYPES, DISCIPLINES, EXPERIENCE_LEVELS, POSITION_TYPES } from "@/types/opportunity";
 
 export interface FiltersState {
   academicYear: string;
   researchType: string;
   discipline: string;
   experienceLevel: string;
+  positionType: string; // New filter state
 }
 
 interface OpportunityFiltersProps {
@@ -26,7 +27,7 @@ export default function OpportunityFilters({ filters, onFilterChange }: Opportun
         <Filter className={`mr-2 h-6 w-6 ${iconColor}`} />
         Filter Opportunities
       </h3>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
         <div>
           <Label htmlFor="academicYearFilter" className="text-sm font-medium text-foreground/80">Academic Year</Label>
           <Select value={filters.academicYear} onValueChange={(value) => onFilterChange('academicYear', value)}>
@@ -78,6 +79,20 @@ export default function OpportunityFilters({ filters, onFilterChange }: Opportun
             <SelectContent>
               {EXPERIENCE_LEVELS.map(level => (
                 <SelectItem key={level} value={level}>{level}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div>
+          <Label htmlFor="positionTypeFilter" className="text-sm font-medium text-foreground/80">Position Type</Label>
+          <Select value={filters.positionType} onValueChange={(value) => onFilterChange('positionType', value)}>
+            <SelectTrigger id="positionTypeFilter" className="w-full mt-1">
+              <SelectValue placeholder="Select position type" />
+            </SelectTrigger>
+            <SelectContent>
+              {POSITION_TYPES.map(type => (
+                <SelectItem key={type} value={type}>{type}</SelectItem>
               ))}
             </SelectContent>
           </Select>

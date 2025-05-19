@@ -21,6 +21,7 @@ export const opportunities: Opportunity[] = [
     researchType: 'Dry Lab',
     discipline: 'Computer Science',
     experienceLevel: 'Advanced',
+    positionType: ['Paid', 'Research Assistant'],
   },
   {
     id: '2',
@@ -40,6 +41,7 @@ export const opportunities: Opportunity[] = [
     researchType: 'Wet Lab',
     discipline: 'Chemistry',
     experienceLevel: 'Intermediate',
+    positionType: ['Unpaid', 'Internship'],
   },
   {
     id: '3',
@@ -59,6 +61,7 @@ export const opportunities: Opportunity[] = [
     researchType: 'Field Research',
     discipline: 'Environmental Science',
     experienceLevel: 'Beginner',
+    positionType: ['Volunteer', 'Field Research'],
   },
   {
     id: '4',
@@ -78,6 +81,7 @@ export const opportunities: Opportunity[] = [
     researchType: 'Theoretical',
     discipline: 'Physics',
     experienceLevel: 'Advanced',
+    positionType: ['Fellowship', 'Paid'],
   },
   {
     id: '5',
@@ -97,6 +101,7 @@ export const opportunities: Opportunity[] = [
     researchType: 'Clinical',
     discipline: 'Psychology',
     experienceLevel: 'Intermediate',
+    positionType: ['Paid', 'Research Assistant'],
   },
   {
     id: '6',
@@ -112,8 +117,9 @@ export const opportunities: Opportunity[] = [
     imageUrl: 'https://placehold.co/600x400.png',
     imageHint: 'urban planning',
     academicYear: 'Sophomore',
-    researchType: 'Computational', // Or could be Dry Lab depending on focus
+    researchType: 'Computational', 
     discipline: 'Urban Studies',
     experienceLevel: 'Beginner',
+    positionType: ['Unpaid', 'Internship'],
   }
 ];

@@ -15,6 +15,7 @@ const defaultFilters: FiltersState = {
   researchType: "All",
   discipline: "All",
   experienceLevel: "All",
+  positionType: "All", // New default filter
 };
 
 export default function ClientOpportunityList({ initialOpportunities }: ClientOpportunityListProps) {
@@ -49,8 +50,10 @@ export default function ClientOpportunityList({ initialOpportunities }: ClientOp
       const researchTypeMatch = filters.researchType === "All" || op.researchType === filters.researchType;
       const disciplineMatch = filters.discipline === "All" || op.discipline === filters.discipline;
       const experienceLevelMatch = filters.experienceLevel === "All" || op.experienceLevel === filters.experienceLevel;
+      const positionTypeMatch = filters.positionType === "All" || 
+                                (op.positionType && op.positionType.some(pt => pt.toLowerCase() === filters.positionType.toLowerCase()));
       
-      return searchMatch && academicYearMatch && researchTypeMatch && disciplineMatch && experienceLevelMatch;
+      return searchMatch && academicYearMatch && researchTypeMatch && disciplineMatch && experienceLevelMatch && positionTypeMatch;
     });
   }, [initialOpportunities, activeSearchTerm, filters]);
 
